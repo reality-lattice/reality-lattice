@@ -8,11 +8,8 @@ package com.realitylattice.api;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
-import com.realitylattice.model.Tile;
 import com.realitylattice.module.ApiModule;
 import lombok.extern.java.Log;
-import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.query.Query;
 import static spark.Spark.*;
 
 /**
@@ -22,11 +19,11 @@ import static spark.Spark.*;
 @Log
 public class Api {
 
-    private final Datastore datastore;
+    private final TileApi tileApi;
 
     @Inject
-    Api(Datastore datastore) {
-        this.datastore = datastore;
+    public Api(TileApi tileApi) {
+        this.tileApi = tileApi;
     }
 
     public static void main(String[] args) {
@@ -37,7 +34,10 @@ public class Api {
     }
 
     private void init() {
-        initExceptionHandler((e) -> System.out.println("Shut her down, Martha, she's sucking mud"));
+        initExceptionHandler((e) -> {
+            System.out.println("Shut her down, Martha, she's sucking mud");
+            System.exit(1);
+        });
 
         after((request, response) -> {
             response.header("Content-Encoding", "gzip");
@@ -51,21 +51,11 @@ public class Api {
             before("/*", (q, a) -> log.info("Received api call"));
 
             path("/tiles", () -> {
-                get("/list", (request, response) -> {
-                    final Query<Tile> query = datastore.createQuery(Tile.class);
-                    return query.asList();
-                });
-                post("/add", ((request, response) -> {
-                    Tile tile = new Tile();
-                    tile.setName("Martha");
-                    return datastore.save(tile);
-                }));
+                get("/list", tileApi.list);
+                post("/add", tileApi.add);
             });
 
         });
-
-        //Tiles
-        //
     }
 
 }

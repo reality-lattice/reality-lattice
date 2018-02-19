@@ -20,10 +20,12 @@ public class ApiModule extends AbstractModule {
 
     private final Morphia morphia = new Morphia();
     private final Datastore datastore;
+    private static final String dbName = "reality-lattice";
+    private static final String modelPackage = "com.realitylattice.model";
 
     public ApiModule() {
-        morphia.mapPackage("com.realitylattice.model");
-        datastore = morphia.createDatastore(new MongoClient(), "morphia_example");
+        morphia.mapPackage(modelPackage);
+        datastore = morphia.createDatastore(new MongoClient(), dbName);
         datastore.ensureIndexes();
     }
 
