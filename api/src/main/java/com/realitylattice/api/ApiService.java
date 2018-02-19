@@ -20,12 +20,12 @@ import static spark.Spark.*;
 public class ApiService {
 
     private final TileApi tileApi;
-    private final UserApi userApi;
+    private final PlayerApi userApi;
 
     @Inject
     public ApiService(
             TileApi tileApi,
-            UserApi userApi) {
+            PlayerApi userApi) {
         this.tileApi = tileApi;
         this.userApi = userApi;
     }

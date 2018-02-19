@@ -1,5 +1,4 @@
-# reality-lattice
-Reality Lattice
+# Reality Lattice
 
 ## Requirements
 - JDK9

@@ -5,6 +5,9 @@
  */
 package com.realitylattice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.HashSet;
+import java.util.Set;
 import lombok.Data;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
@@ -20,4 +23,10 @@ public class Tile {
     @Id
     private ObjectId id;
     private String name;
+    
+    @JsonIgnore
+    private Set<Player> players = new HashSet<>();
+    
+    @JsonIgnore
+    private Set<NPC> npcs = new HashSet<>();
 }

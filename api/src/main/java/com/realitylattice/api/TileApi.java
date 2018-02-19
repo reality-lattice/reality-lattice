@@ -43,4 +43,11 @@ public class TileApi {
         }
     };
 
+    public Route delete = new Route() {
+        @Override
+        public Object handle(Request request, Response response) throws Exception {
+            return datastore.delete(mapper.readValue(request.body(), Tile.class));
+        }
+    };
+
 }

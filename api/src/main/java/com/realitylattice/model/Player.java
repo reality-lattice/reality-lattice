@@ -6,10 +6,8 @@
 package com.realitylattice.model;
 
 import lombok.Data;
-import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Field;
-import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Index;
 import org.mongodb.morphia.annotations.Indexes;
 
@@ -17,15 +15,16 @@ import org.mongodb.morphia.annotations.Indexes;
  *
  * @author jwood
  */
-@Entity("users")
+@Entity("players")
 @Indexes(
     @Index(value = "email", fields = @Field("email"))
 )
 @Data
-public class User {
-    @Id
-    private ObjectId id;
-    private String firstName;
-    private String lastName;
+public class Player extends Person {
+
+    public Player() {
+        super();
+    }
+    
     private String email;
 }

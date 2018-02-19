@@ -27,7 +27,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.realitylattice.api.Api</mainClass>
+                    <mainClass>com.realitylattice.api.ApiService</mainClass>
                 </configuration>
             </plugin>
         </plugins>
