@@ -8,6 +8,7 @@ package com.realitylattice.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.Inject;
 import com.realitylattice.model.Tile;
+import com.realitylattice.model.User;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.Query;
 import spark.Request;
@@ -18,20 +19,20 @@ import spark.Route;
  *
  * @author jwood
  */
-public class TileApi {
+public class UserApi {
 
     private final Datastore datastore;
     private final ObjectMapper mapper = new ObjectMapper();
 
     @Inject
-    public TileApi(Datastore datastore) {
+    public UserApi(Datastore datastore) {
         this.datastore = datastore;
     }
 
     public Route list = new Route() {
         @Override
         public Object handle(Request request, Response response) throws Exception {
-            final Query<Tile> query = datastore.createQuery(Tile.class);
+            final Query<User> query = datastore.createQuery(User.class);
             return query.asList();
         }
     };
@@ -39,8 +40,15 @@ public class TileApi {
     public Route add = new Route() {
         @Override
         public Object handle(Request request, Response response) throws Exception {
-            return datastore.save(mapper.readValue(request.body(), Tile.class));
+            return datastore.save(mapper.readValue(request.body(), User.class));
         }
     };
 
+    public Route delete = new Route() {
+        @Override
+        public Object handle(Request request, Response response) throws Exception {
+            return datastore.delete(mapper.readValue(request.body(), User.class));
+        }
+    };
+    
 }

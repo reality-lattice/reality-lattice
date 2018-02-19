@@ -17,18 +17,22 @@ import static spark.Spark.*;
  * @author jwood
  */
 @Log
-public class Api {
+public class ApiService {
 
     private final TileApi tileApi;
+    private final UserApi userApi;
 
     @Inject
-    public Api(TileApi tileApi) {
+    public ApiService(
+            TileApi tileApi,
+            UserApi userApi) {
         this.tileApi = tileApi;
+        this.userApi = userApi;
     }
 
     public static void main(String[] args) {
         Injector injector = Guice.createInjector(new ApiModule());
-        Api api = injector.getInstance(Api.class);
+        ApiService api = injector.getInstance(ApiService.class);
         api.init();
         api.run();
     }
@@ -50,9 +54,16 @@ public class Api {
 
             before("/*", (q, a) -> log.info("Received api call"));
 
+            path("/users", () -> {
+                get("/list", userApi.list);
+                post("/add", userApi.add);
+                delete("/add", userApi.delete);
+            });
+
             path("/tiles", () -> {
                 get("/list", tileApi.list);
                 post("/add", tileApi.add);
+                delete("/add", tileApi.delete);
             });
 
         });
