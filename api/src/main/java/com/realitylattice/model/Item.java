@@ -5,16 +5,16 @@
  */
 package com.realitylattice.model;
 
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
+
 /**
  *
  * @author jwood
  */
-public class NPC extends Person {
-
-    private LatticePosition startPosition;
-    
-    public NPC() {
-        super();
-    }
-    
+@Entity("items")
+public class Item {
+    @Id
+    private String id;
+    private String name;
 }

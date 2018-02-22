@@ -9,12 +9,6 @@ package com.realitylattice.model;
  *
  * @author jwood
  */
-public class NPC extends Person {
-
-    private LatticePosition startPosition;
-    
-    public NPC() {
-        super();
-    }
+public class LatticePosition {
     
 }
