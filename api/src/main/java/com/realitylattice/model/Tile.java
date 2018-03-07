@@ -23,6 +23,7 @@ public class Tile {
     @Id
     private ObjectId id;
     private String name;
+    private Set<Exit> exits;
     
     @JsonIgnore
     private Set<Player> players = new HashSet<>();

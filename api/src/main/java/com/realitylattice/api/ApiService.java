@@ -57,13 +57,13 @@ public class ApiService {
             path("/users", () -> {
                 get("/list", userApi.list);
                 post("/add", userApi.add);
-                delete("/add", userApi.delete);
+                delete("/delete", userApi.delete);
             });
 
             path("/tiles", () -> {
                 get("/list", tileApi.list);
                 post("/add", tileApi.add);
-                delete("/add", tileApi.delete);
+                delete("/delete", tileApi.delete);
             });
 
         });
