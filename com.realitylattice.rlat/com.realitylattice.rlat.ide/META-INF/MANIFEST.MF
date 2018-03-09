@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.realitylattice.rlat.ide
+Bundle-SymbolicName: com.realitylattice.rlat.ide;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.realitylattice.ide.contentassist.antlr,
+ com.realitylattice.ide.contentassist.antlr.internal
+Require-Bundle: org.antlr.runtime,
+ org.eclipse.xtext.xbase.lib,
+ com.realitylattice.rlat,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+

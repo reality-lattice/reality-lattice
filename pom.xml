@@ -11,16 +11,15 @@
     <modules>
         <!--<module>web</module>-->
         <module>api</module>
-        <module>dsl</module>
-    </modules>
+    <module>com.realitylattice.rlat</module>
+  </modules>
 
     <properties>
-        <maven.compiler.source>1.9</maven.compiler.source>
-        <maven.compiler.target>1.9</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
     </dependencies>
 
 </project>
-

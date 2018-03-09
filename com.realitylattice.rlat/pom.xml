@@ -7,18 +7,18 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-	<groupId>com.realitylattice.dsl</groupId>
+	<groupId>com.realitylattice.rlat</groupId>
 	<artifactId>parent</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>com.realitylattice.dsl</module>
-		<module>com.realitylattice.dsl.ide</module>
-		<module>com.realitylattice.dsl.ui</module>
-		<module>com.realitylattice.dsl.tests</module>
-		<module>com.realitylattice.dsl.sdk</module>
-		<module>com.realitylattice.dsl.updatesite</module>
+		<module>com.realitylattice.rlat</module>
+		<module>com.realitylattice.rlat.ide</module>
+		<module>com.realitylattice.rlat.ui</module>
+		<module>com.realitylattice.rlat.tests</module>
+		<module>com.realitylattice.rlat.sdk</module>
+		<module>com.realitylattice.rlat.updatesite</module>
 	</modules>
 	
 	<properties>
