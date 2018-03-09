@@ -11,8 +11,7 @@
     <modules>
         <!--<module>web</module>-->
         <module>api</module>
-    <module>com.realitylattice.rlat</module>
-  </modules>
+    </modules>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

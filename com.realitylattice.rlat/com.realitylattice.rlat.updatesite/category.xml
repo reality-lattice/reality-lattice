@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/com.realitylattice.rlat.sdk_0.0.0.jar" id="com.realitylattice.rlat.sdk" version="0.0.0">
-      <category name="com.realitylattice.rlat"/>
-   </feature>
-   <category-def name="com.realitylattice.rlat" label="Reality Lattice DSL"/>
-</site>
