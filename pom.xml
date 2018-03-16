@@ -10,7 +10,8 @@
 
     <modules>
         <!--<module>web</module>-->
-        <module>api</module>
+       <module>api</module>
+       <module>rll</module>
     </modules>
 
     <properties>
