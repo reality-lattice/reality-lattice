@@ -9,9 +9,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.Data;
-import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Id;
 
 /**
  *
@@ -19,11 +18,12 @@ import org.mongodb.morphia.annotations.Id;
  */
 @Entity("tiles")
 @Data
-public class Tile {
-    @Id
-    private ObjectId id;
+public class Tile extends BaseModel {
+
     private String name;
-    private Set<Exit> exits;
+
+    @Embedded
+    private Set<Exit> exits = new HashSet<>();
     
     @JsonIgnore
     private Set<Player> players = new HashSet<>();

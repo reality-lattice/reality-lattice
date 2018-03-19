@@ -5,15 +5,16 @@
  */
 package com.realitylattice.model;
 
-import org.mongodb.morphia.annotations.Entity;
+import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Id;
 
 /**
  *
  * @author jwood
  */
-@Entity("items")
-public class Item extends BaseModel {
+public class BaseModel {
 
-    private String name;
+    @Id
+    private ObjectId id;
 
 }

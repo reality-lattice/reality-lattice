@@ -5,10 +5,13 @@
  */
 package com.realitylattice.model;
 
+import org.mongodb.morphia.annotations.Embedded;
+
 /**
  *
  * @author jwood
  */
+@Embedded
 public class Exit {
     
 }

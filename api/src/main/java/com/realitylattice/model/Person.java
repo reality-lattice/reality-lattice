@@ -23,9 +23,9 @@ import org.mongodb.morphia.annotations.Id;
 @JsonSubTypes({
     @JsonSubTypes.Type(value = Player.class, name = "player"),
     @JsonSubTypes.Type(value = NPC.class, name = "npc")})
-public abstract class Person {
-    @Id
-    private ObjectId id;
+public abstract class Person extends BaseModel {
+
     private String firstName;
     private String lastName;
+
 }
