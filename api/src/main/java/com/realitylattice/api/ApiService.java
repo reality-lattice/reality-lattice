@@ -10,6 +10,7 @@ import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.realitylattice.module.ApiModule;
 import lombok.extern.java.Log;
+import spark.Route;
 import static spark.Spark.*;
 
 /**
@@ -55,15 +56,15 @@ public class ApiService {
             before("/*", (q, a) -> log.info("Received api call"));
 
             path("/users", () -> {
-                get("/list", userApi.list);
-                post("/add", userApi.add);
-                delete("/delete", userApi.delete);
+                get("", userApi.list);
+                post("", userApi.add);
+                delete("", userApi.delete);
             });
 
             path("/tiles", () -> {
-                get("/list", tileApi.list);
-                post("/add", tileApi.add);
-                delete("/delete", tileApi.delete);
+                get("", tileApi.list);
+                post("", tileApi.add);
+                delete("", tileApi.delete);
             });
 
         });

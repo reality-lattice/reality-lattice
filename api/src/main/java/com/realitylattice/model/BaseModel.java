@@ -5,6 +5,7 @@
  */
 package com.realitylattice.model;
 
+import lombok.Data;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Id;
 
@@ -12,6 +13,7 @@ import org.mongodb.morphia.annotations.Id;
  *
  * @author jwood
  */
+@Data
 public class BaseModel {
 
     @Id

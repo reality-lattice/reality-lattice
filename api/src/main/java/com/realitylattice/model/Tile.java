@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 
@@ -18,6 +19,7 @@ import org.mongodb.morphia.annotations.Entity;
  */
 @Entity("tiles")
 @Data
+@EqualsAndHashCode(callSuper=true)
 public class Tile extends BaseModel {
 
     private String name;
