@@ -12,8 +12,8 @@
     <packaging>jar</packaging>
 
     <name>Reality Lattice API</name>
-
     <build>
+        <finalName>api</finalName>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -28,6 +28,52 @@
                 </executions>
                 <configuration>
                     <mainClass>com.realitylattice.api.ApiService</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <images>
+                        <image>
+                            <alias>api</alias>
+                            <name>realitylattice/api:${project.version}</name>
+                            <build>
+                                <from>java:9</from>
+                                <assembly>
+                                    <descriptor>docker-assembly.xml</descriptor>
+                                </assembly>
+                                <cmd> 
+                                    <shell>java -jar /maven/api-${project.version}}.jar</shell>
+                                </cmd>
+                            </build>
+                            <run> 
+                                <ports> 
+                                    <port>4567:4567</port>
+                                </ports>
+                                <wait> 
+                                    <http>
+                                        <url>http://localhost:4567</url>
+                                    </http>
+                                    <time>10000</time>
+                                </wait>
+                                <links> 
+                                    <link>mongo:mongo</link>
+                                </links>
+                            </run>                        
+                        </image>
+                        <image>
+                            <alias>mongo</alias> 
+                            <name>library/mongo</name>
+                            <run>
+<!--                                <wait> 
+                                    <log>database system is ready to accept connections</log>
+                                    <time>20000</time>
+                                </wait>-->
+                            </run>
+                        </image>
+                    </images>
                 </configuration>
             </plugin>
         </plugins>
