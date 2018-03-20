@@ -55,6 +55,8 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
+                    <useColor>true</useColor>
+                    <verbose>true</verbose>
                     <images>
                         <image>
                             <alias>api</alias>
