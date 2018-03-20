@@ -14,20 +14,25 @@
     <name>Reality Lattice Language</name>
 
     <build>
+        
+        <finalName>rll</finalName>
+
         <plugins>
-          <plugin>
-              <groupId>org.antlr</groupId>
-              <artifactId>antlr4-maven-plugin</artifactId>
-              <version>4.3</version>
-              <executions>
-                  <execution>
-                      <goals>
-                          <goal>antlr4</goal>
-                      </goals>
-                  </execution>
-              </executions>
-          </plugin>
-                      <plugin>
+
+            <plugin>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-maven-plugin</artifactId>
+                <version>4.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
@@ -42,15 +47,20 @@
                     <mainClass></mainClass>
                 </configuration>
             </plugin>
+
         </plugins>
+
     </build>
 
     <dependencies>
-      <dependency>
-        <groupId>org.antlr</groupId>
-        <artifactId>antlr4-maven-plugin</artifactId>
-        <version>4.3</version>
-        <type>maven-plugin</type>
-      </dependency>
-        </dependencies>
+
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-maven-plugin</artifactId>
+            <version>4.3</version>
+            <type>maven-plugin</type>
+        </dependency>
+
+    </dependencies>
+    
 </project>
