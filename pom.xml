@@ -19,6 +19,21 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.22.1</version>
+                <extensions>true</extensions>
+            </plugin> 
+
+        </plugins>
+
+    </build>
+
     <dependencies>
     </dependencies>
 
