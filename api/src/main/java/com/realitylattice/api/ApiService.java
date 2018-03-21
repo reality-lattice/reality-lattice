@@ -42,6 +42,8 @@ public class ApiService {
     }
 
     public static void main(String[] args) {
+        staticFileLocation("/public");
+        webSocket("/channel", ChannelApi.class);
         Injector injector = Guice.createInjector(new ApiModule());
         ApiService api = injector.getInstance(ApiService.class);
         api.init();
@@ -49,8 +51,7 @@ public class ApiService {
     }
 
     private void init() {
-        webSocket("/channel", ChannelApi.class);
-        
+
         initExceptionHandler((e) -> {
             System.out.println("Shut her down, Martha, she's sucking mud");
             System.exit(1);
