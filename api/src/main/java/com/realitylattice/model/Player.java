@@ -23,7 +23,8 @@ import org.mongodb.morphia.annotations.Indexes;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
 @Entity("players")
 @Indexes(

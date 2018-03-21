@@ -24,7 +24,8 @@ import static spark.Spark.*;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
 @Log
 public class ApiService {
@@ -55,6 +56,7 @@ public class ApiService {
 
         after((request, response) -> {
             response.header("Content-Encoding", "gzip");
+            response.type("application/json");
         });
     }
 
@@ -76,7 +78,7 @@ public class ApiService {
                 delete("", tileApi.delete);
                 path("/:id/exits", () -> {
                     get("", tileApi.listExits);
-//                    post("", tileApi.addExit);
+                    post("", tileApi.addExit);
 //                    delete("", tileApi.delete);
                 });
             });

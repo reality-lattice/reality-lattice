@@ -21,7 +21,8 @@ import org.mongodb.morphia.annotations.Id;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
 @Data
 public class BaseModel {

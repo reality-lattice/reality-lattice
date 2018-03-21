@@ -15,13 +15,15 @@
  */
 package com.realitylattice.model;
 
-import org.mongodb.morphia.annotations.Embedded;
+import org.mongodb.morphia.annotations.Entity;
+
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
-@Embedded
+@Entity("exits")
 public class Exit {
     
 }

@@ -17,7 +17,8 @@ package com.realitylattice.model;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
 public class NPC extends Person {
 

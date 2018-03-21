@@ -19,7 +19,8 @@ import org.mongodb.morphia.annotations.Entity;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
 @Entity("items")
 public class Item extends BaseModel {
