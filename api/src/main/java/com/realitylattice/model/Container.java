@@ -15,21 +15,17 @@
  */
 package com.realitylattice.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Data;
-import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Reference;
-
 
 /**
  *
- * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
- *
+ * @author jwood
  */
 @Data
-@Entity("exits")
-public class Exit {
+public class Container extends Item {
     
-    @Reference
-    private Tile destination;
+    private List<Item> contents = new ArrayList<>();
     
 }

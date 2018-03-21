@@ -15,11 +15,21 @@
  */
 package com.realitylattice.model;
 
+import java.math.BigInteger;
+import lombok.Data;
+import org.mongodb.morphia.annotations.Entity;
+
 /**
  *
  * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
  *
  */
-public class LatticePosition {
+@Data
+@Entity("locations")
+public class Location {
     
+    private BigInteger latitude;
+    private BigInteger longitude;
+    private BigInteger altitude;
+
 }

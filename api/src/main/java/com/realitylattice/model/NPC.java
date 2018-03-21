@@ -22,7 +22,7 @@ package com.realitylattice.model;
  */
 public class NPC extends Person {
 
-    private LatticePosition startPosition;
+    private Location startPosition;
     
     public NPC() {
         super();
