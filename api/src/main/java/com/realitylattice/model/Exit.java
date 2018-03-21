@@ -27,7 +27,7 @@ import org.mongodb.morphia.annotations.Reference;
  */
 @Data
 @Entity("exits")
-public class Exit {
+public class Exit extends BaseModel {
     
     @Reference
     private Tile destination;

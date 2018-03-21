@@ -25,6 +25,4 @@ import org.mongodb.morphia.annotations.Entity;
 @Entity("items")
 public class Item extends BaseModel {
 
-    private String name;
-
 }

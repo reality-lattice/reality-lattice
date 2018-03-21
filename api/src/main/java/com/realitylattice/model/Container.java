@@ -21,7 +21,8 @@ import lombok.Data;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
 @Data
 public class Container extends Item {

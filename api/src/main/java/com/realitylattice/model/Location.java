@@ -26,7 +26,7 @@ import org.mongodb.morphia.annotations.Entity;
  */
 @Data
 @Entity("locations")
-public class Location {
+public class Location extends BaseModel {
     
     private BigInteger latitude;
     private BigInteger longitude;

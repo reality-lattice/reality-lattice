@@ -16,6 +16,7 @@
 package com.realitylattice.model;
 
 import lombok.Data;
+import org.mongodb.morphia.annotations.Entity;
 
 /**
  *
@@ -23,12 +24,7 @@ import lombok.Data;
  *
  */
 @Data
-public class NPC extends Person {
-
-    private Location startPosition;
-
-    public NPC() {
-        super();
-    }
+@Entity("channels")
+public class Channel extends BaseModel {
 
 }

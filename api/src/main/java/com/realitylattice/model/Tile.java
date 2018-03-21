@@ -35,8 +35,6 @@ import org.mongodb.morphia.annotations.Reference;
 @EqualsAndHashCode(callSuper=true)
 public class Tile extends BaseModel {
 
-    private String name;
-
     @Reference
     private Map<String, Exit> exits = new HashMap<>();
     

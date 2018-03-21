@@ -49,6 +49,8 @@ public class ApiService {
     }
 
     private void init() {
+        webSocket("/channel", ChannelApi.class);
+        
         initExceptionHandler((e) -> {
             System.out.println("Shut her down, Martha, she's sucking mud");
             System.exit(1);

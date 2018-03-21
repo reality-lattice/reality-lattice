@@ -2,6 +2,10 @@
 
 grammar RLL;
 
+@header {
+package com.realitylattice.rll; 
+}
+
 command
   : action target
   ;
