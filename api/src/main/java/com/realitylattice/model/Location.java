@@ -15,27 +15,21 @@
  */
 package com.realitylattice.model;
 
+import java.math.BigInteger;
 import lombok.Data;
 import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Field;
-import org.mongodb.morphia.annotations.Index;
-import org.mongodb.morphia.annotations.Indexes;
 
 /**
  *
  * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
  *
  */
-@Entity("players")
-@Indexes(
-    @Index(value = "email", fields = @Field("email"))
-)
 @Data
-public class Player extends Person {
-
-    public Player() {
-        super();
-    }
+@Entity("locations")
+public class Location extends BaseModel {
     
-    private String email;
+    private BigInteger latitude;
+    private BigInteger longitude;
+    private BigInteger altitude;
+
 }

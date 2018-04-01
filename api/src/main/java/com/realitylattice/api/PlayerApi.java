@@ -26,7 +26,8 @@ import spark.Route;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
 public class PlayerApi {
 

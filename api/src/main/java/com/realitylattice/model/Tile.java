@@ -22,21 +22,20 @@ import java.util.Map;
 import java.util.Set;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Reference;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
-@Entity("tiles")
 @Data
+@Entity("tiles")
 @EqualsAndHashCode(callSuper=true)
 public class Tile extends BaseModel {
 
-    private String name;
-
-    @Embedded
+    @Reference
     private Map<String, Exit> exits = new HashMap<>();
     
     @JsonIgnore

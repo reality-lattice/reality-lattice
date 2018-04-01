@@ -15,16 +15,20 @@
  */
 package com.realitylattice.model;
 
+import lombok.Data;
+
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
+@Data
 public class NPC extends Person {
 
-    private LatticePosition startPosition;
-    
+    private Location startPosition;
+
     public NPC() {
         super();
     }
-    
+
 }

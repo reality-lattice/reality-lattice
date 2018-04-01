@@ -13,12 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.realitylattice.model;
+package com.realitylattice.api;
+
+import spark.Request;
+import spark.Response;
+import spark.Route;
 
 /**
  *
  * @author jwood
  */
-public class LatticePosition {
+public class CommandApi {
+
+    public Route evaluate = new Route() {
+        @Override
+        public Object handle(Request request, Response response) throws Exception {
+            return null;
+        }
+    };
     
 }

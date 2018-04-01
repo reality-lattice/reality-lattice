@@ -15,18 +15,31 @@
  */
 package com.realitylattice.model;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import lombok.Data;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Version;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
 @Data
+@JsonSubTypes({
+    @JsonSubTypes.Type(value = Channel.class, name = "channel"),
+    @JsonSubTypes.Type(value = Item.class, name = "item"),
+    @JsonSubTypes.Type(value = Location.class, name = "location"),
+    @JsonSubTypes.Type(value = Person.class, name = "person"),
+    @JsonSubTypes.Type(value = Tile.class, name = "tile"),
+    @JsonSubTypes.Type(value = Exit.class, name = "exit")})
 public class BaseModel {
 
-    @Id
-    private ObjectId id;
+    @Id private ObjectId id;
+    @Version Long version;
+    
+    private String name;
+    private String description;
 
 }

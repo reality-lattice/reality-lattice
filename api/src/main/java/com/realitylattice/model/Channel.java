@@ -17,25 +17,14 @@ package com.realitylattice.model;
 
 import lombok.Data;
 import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Field;
-import org.mongodb.morphia.annotations.Index;
-import org.mongodb.morphia.annotations.Indexes;
 
 /**
  *
  * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
  *
  */
-@Entity("players")
-@Indexes(
-    @Index(value = "email", fields = @Field("email"))
-)
 @Data
-public class Player extends Person {
+@Entity("channels")
+public class Channel extends BaseModel {
 
-    public Player() {
-        super();
-    }
-    
-    private String email;
 }

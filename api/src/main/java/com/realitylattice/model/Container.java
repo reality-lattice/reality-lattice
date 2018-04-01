@@ -15,27 +15,18 @@
  */
 package com.realitylattice.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Data;
-import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Field;
-import org.mongodb.morphia.annotations.Index;
-import org.mongodb.morphia.annotations.Indexes;
 
 /**
  *
  * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
  *
  */
-@Entity("players")
-@Indexes(
-    @Index(value = "email", fields = @Field("email"))
-)
 @Data
-public class Player extends Person {
-
-    public Player() {
-        super();
-    }
+public class Container extends Item {
     
-    private String email;
+    private List<Item> contents = new ArrayList<>();
+    
 }

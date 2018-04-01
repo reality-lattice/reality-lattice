@@ -13,29 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.realitylattice.model;
 
-import lombok.Data;
-import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Field;
-import org.mongodb.morphia.annotations.Index;
-import org.mongodb.morphia.annotations.Indexes;
+parser grammar RLLParser;
+options { tokenVocab=RLLLexer; }
 
-/**
- *
- * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
- *
- */
-@Entity("players")
-@Indexes(
-    @Index(value = "email", fields = @Field("email"))
-)
-@Data
-public class Player extends Person {
+command 
+ : action target
+  ;
 
-    public Player() {
-        super();
-    }
-    
-    private String email;
-}
+action
+  : RLL_CREATE | RLL_UPDATE | RLL_DELETE
+  ;
+
+target
+  : RLL_TILE | RLL_ITEM
+  ;
+
+/*
+roll
+  : [0-9]'D'[0-9] 
+*/
+

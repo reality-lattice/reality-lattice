@@ -13,29 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.realitylattice.model;
 
-import lombok.Data;
-import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Field;
-import org.mongodb.morphia.annotations.Index;
-import org.mongodb.morphia.annotations.Indexes;
+lexer grammar RLLLexer;
 
-/**
- *
- * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
- *
- */
-@Entity("players")
-@Indexes(
-    @Index(value = "email", fields = @Field("email"))
-)
-@Data
-public class Player extends Person {
-
-    public Player() {
-        super();
-    }
-    
-    private String email;
+@lexer::members {
+public static final int WHITESPACE = 1; 
+public static final int COMMENTS = 2;
 }
+
+RLL_CREATE
+  : 'create'
+  ;
+
+RLL_EDIT
+  : 'edit'
+  ;
+
+RLL_DELETE
+  : 'delete'
+  ;
+
+RLL_TILE
+  : 'tile'
+  ;
+
+RLL_ITEM
+  : 'item'
+  ;
+
+WS
+  : [ \t\n\r]+ -> channel(WHITESPACE)
+  ;
+
+SL_COMMENT
+  : '//' .*? '\n' -> channel(COMMENTS);

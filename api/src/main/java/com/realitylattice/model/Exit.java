@@ -15,13 +15,21 @@
  */
 package com.realitylattice.model;
 
-import org.mongodb.morphia.annotations.Embedded;
+import lombok.Data;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Reference;
+
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
-@Embedded
-public class Exit {
+@Data
+@Entity("exits")
+public class Exit extends BaseModel {
+    
+    @Reference
+    private Tile destination;
     
 }

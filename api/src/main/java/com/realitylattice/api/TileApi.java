@@ -27,7 +27,8 @@ import spark.Route;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
 public class TileApi {
 
@@ -72,7 +73,7 @@ public class TileApi {
     public Route addExit = new Route() {
         @Override
         public Object handle(Request request, Response response) throws Exception {
-            final Query<Tile> query = datastore.createQuery(Tile.class).filter("id", new ObjectId(request.params(":id"))).project("id", true).project("exits", true);
+            final Query<Tile> query = datastore.createQuery(Tile.class).filter("id", new ObjectId(request.params(":id"))).project("exits", true);
             return query.asList();
         }
     };

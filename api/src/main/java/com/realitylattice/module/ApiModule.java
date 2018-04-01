@@ -24,7 +24,8 @@ import org.mongodb.morphia.Morphia;
 
 /**
  *
- * @author jwood
+ * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
+ *
  */
 public class ApiModule extends AbstractModule {
 
