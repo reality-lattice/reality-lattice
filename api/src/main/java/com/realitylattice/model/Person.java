@@ -16,9 +16,9 @@
 package com.realitylattice.model;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Data;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Reference;
 
 /**
  *
@@ -27,10 +27,6 @@ import org.mongodb.morphia.annotations.Entity;
  */
 @Data
 @Entity(value="persons", noClassnameStored=true)
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "_t")
 @JsonSubTypes({
     @JsonSubTypes.Type(value = Player.class, name = "player"),
     @JsonSubTypes.Type(value = NPC.class, name = "npc")})
@@ -38,5 +34,8 @@ public abstract class Person extends BaseModel {
 
     private String firstName;
     private String lastName;
+    
+    @Reference
+    private Location location;
 
 }

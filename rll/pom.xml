@@ -8,6 +8,7 @@
         <artifactId>realitylattice</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+    
     <artifactId>rll</artifactId>
     <packaging>jar</packaging>
 
@@ -28,6 +29,11 @@
                         <goals>
                             <goal>antlr4</goal>
                         </goals>
+                        <configuration>
+                            <listener>true</listener>
+                            <visitor>true</visitor>
+                            <!--<outputDirectory>src/main/java/com/realitylattice/rll/</outputDirectory>-->
+                        </configuration>    
                     </execution>
                 </executions>
             </plugin>

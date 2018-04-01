@@ -16,7 +16,6 @@
 package com.realitylattice.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -31,8 +30,8 @@ import org.mongodb.morphia.annotations.Reference;
  * @author <a href="mailto:jonathan@woodcomputing.com">Jonathan Wood</a>
  *
  */
-@Entity("tiles")
 @Data
+@Entity("tiles")
 @EqualsAndHashCode(callSuper=true)
 public class Tile extends BaseModel {
 
