@@ -18,6 +18,7 @@ package com.realitylattice.model;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Data;
+import org.mongodb.morphia.annotations.Reference;
 
 /**
  *
@@ -27,6 +28,7 @@ import lombok.Data;
 @Data
 public class Container extends Item {
     
+    @Reference
     private List<Item> contents = new ArrayList<>();
     
 }
