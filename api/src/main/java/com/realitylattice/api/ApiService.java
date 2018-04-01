@@ -87,11 +87,11 @@ public class ApiService {
                 get("", tileApi.list);
                 post("", tileApi.add);
                 delete("", tileApi.delete);
-//                path("/:id/exits", () -> {
-//                    get("", tileApi.listExits);
+                path("/:id/exits", () -> {
+                    get("", tileApi.listExits);
 //                    post("", tileApi.addExit);
 //                    delete("", tileApi.delete);
-//                });
+                });
             });
 
         });
